@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Antonio's Website</title>
+    <link rel="stylesheet" href="../main.css" type="text/css">
+    </head>
+    <body class="animated">
+        <div class="header">
+    <div class="container">
+    <div class="logo">
+        <h1>Antonio's Website</h1>    
+    </div>
+    <div class="nav">
+		<ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="smw.html">Super Mario World</a></li>
+            <li><a href="pm.html">Paper Mario</a></li>
+			<li><a href="archive.html">Archive</a></li>
+        </ul>
+    </div>
+</div>
+</div>
+    <div class="container">
+        <div class="content">
+            <center><h1><i>Paper Mario</i> Modding</h1></center>
+            <hr />
+            <h2>What is <i>Paper Mario</i>?</h2>
+            <p><i>Paper Mario</i> is an ongoing series of action-adventure games by Nintendo. Each one features expansive overworld levels to explore, and interesting turn-based battles. Here, I'll be focusing on the modern trilogy of games:</p>
+            <ul>
+                <li><i>Sticker Star</i> (2012): Nintendo 3DS</li>
+                <li><i>Color Splash</i> (2016): Wii U</li>
+                <li><i>The Origami King</i> (2020): Nintendo Switch</li>
+            </ul>
+            <p>In this guide, I'll mostly be going over text modding. It's the only thing I'm sure of how to do for all of these games, and it's pretty easy to start with.</p>
+            <h2><i>Sticker Star</i> Modding</h2>
+            <img src="./img/difficulty1-wordmark.png">
+            <h3>What You'll Need</h3>
+            <ul>
+                <li>A decrypted copy of the game. Dump it from your own 3DS; the steps for this are outside the scope of this guide.</li>
+                <li><a href="https://citra-emu.org/">Citra emulator</a>. For this mod, I used Citra Nightly 1705, but more recent versions should work as well.</li>
+                <li><a href="https://github.com/IcySon55/Kuriimu/releases">Kuriimu</a>. This program lets you open and edit MSBT files, which you will need to do to replace the text.</li>
+            </ul>
+            <h3>The Guide</h3>
+            <p>We'll be playing the game on Citra. You could play mods on a regular 3DS as well, but Citra works best for testing them.</p>
+            <ol>
+                <li>Get a fresh RomFS dump. You can do this from Citra by right clicking on the game and choosing "Dump RomFS".</li>
+                <img src="./img/ss-romfs.png">
+                <li>If you're on the USA release, the files can be found in <tt>%APPDATA%\Citra\dump\romfs\00040000000A5E00</tt>. Your folder should look like this:</li>
+                <img src="./img/ss-rootfolders.png">
+                <li>Navigate to <tt>\messages\US_English</tt>. You'll edit a different file depending on which level and part of the game you want to change the text in. For this tutorial, we'll do Surfshine Harbor, because it's both uniquely labeled and easily accessible from the start of the game. Its text file is <tt>porttown_harbor.msbt</tt>. <b>Make sure to back up any files before you edit them!</b></li>
+                <img src="./img/ss-english.png">
+                <li>You can change any text you want from here. Make sure the text is spaced and doesn't go outside of the text box; use the length of the original message as a guideline for how many characters long each line should be.</li>
+                <img src="./img/ss-kuriimu.png">
+                <li>You've changed your text, but where should it go now? It's time to create a mod directory. Go back to Citra's directory and create <tt>\load\mods\00040000000A5E00\</tt>. The code you use for the game here is the same one as the dumped RomFS. Then, create a <tt>\romfs</tt> folder. Inside there, <b>everything should match the original dump's structure</b>. Create another <tt>\messages\US_English</tt> folder and drop your edited text file in there. Again, make sure it exactly matches the name of the original file.</li>
+                <li>Play <i>Sticker Star</i> in Citra and get to the point where your text shows up. If it changed, congratulations! This guide worked!</li>
+                <div class="row">
+                <div class="column">
+                    <img src="./img/ss-surfshine1.png" width="300px">
+                    <figcaption>Original</figcaption>
+                </div>
+                <div class="column">
+                    <img src="./img/ss-surfshine2.png" width="300px">
+                    <figcaption>Modded</figcaption>
+                </div>
+                </div>
+                <li>A quick note on disabling mods. The easiest way to do this is to rename the <tt>romfs</tt> folder inside <tt>\load\mods</tt>. This way, the file structure doesn't match up anymore, so the modded files won't be loaded. To load a mod again, rename the <tt>romfs</tt> folder back.</li>
+            </ol>
+            </div>
+        </div>
+    </body>
+</html>
