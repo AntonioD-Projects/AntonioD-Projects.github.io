@@ -22,7 +22,7 @@
 </div>
     <div class="container">
         <div class="content">
-            <center><h1><i>Paper Mario</i> Modding</h1></center>
+            <h1 class="center"><i>Paper Mario</i> Modding</h1>
             <hr />
             <h2>What is <i>Paper Mario</i>?</h2>
             <p><i>Paper Mario</i> is an ongoing series of action-adventure games by Nintendo. Each one features expansive overworld levels to explore, and interesting turn-based battles. Here, I'll be focusing on the modern trilogy of games:</p>
@@ -32,12 +32,14 @@
                 <li><i>The Origami King</i> (2020): Nintendo Switch</li>
             </ul>
             <p>In this guide, I'll mostly be going over text modding. It's the only thing I'm sure of how to do for all of these games, and it's pretty easy to start with.</p>
-            <h2><i>Sticker Star</i> Modding</h2>
+
+            <p>Fast section links: <a href="pm.html#ss"><i>Sticker Star</i></a>, <a href="pm.html#cs"><i>Color Splash</i></a>, <a href="pm.html#tok"><i>The Origami King</i></a></p>
+            <h2 id="ss"><i>Sticker Star</i> Modding</h2>
             <img src="./img/difficulty1-wordmark.png">
             <h3>What You'll Need</h3>
             <ul>
                 <li>A decrypted copy of the game. Dump it from your own 3DS; the steps for this are outside the scope of this guide.</li>
-                <li><a href="https://citra-emu.org/">Citra emulator</a>. For this mod, I used Citra Nightly 1705, but more recent versions should work as well.</li>
+                <li><a href="https://citra-emu.org/">Citra emulator</a>. For this mod, I used Citra Nightly 1705. Use the most recent version, it'll still work. It shouldn't matter whether you use Nightly or Canary.</li>
                 <li><a href="https://github.com/IcySon55/Kuriimu/releases">Kuriimu</a>. This program lets you open and edit MSBT files, which you will need to do to replace the text.</li>
             </ul>
             <h3>The Guide</h3>
@@ -45,25 +47,64 @@
             <ol>
                 <li>Get a fresh RomFS dump. You can do this from Citra by right clicking on the game and choosing "Dump RomFS".</li>
                 <img src="./img/ss-romfs.png">
-                <li>If you're on the USA release, the files can be found in <tt>%APPDATA%\Citra\dump\romfs\00040000000A5E00</tt>. Your folder should look like this:</li>
+                <li>If you're on the USA release, the files can be found in <code>%APPDATA%\Citra\dump\romfs\00040000000A5E00</code>. Your folder should look like this:</li>
                 <img src="./img/ss-rootfolders.png">
-                <li>Navigate to <tt>\messages\US_English</tt>. You'll edit a different file depending on which level and part of the game you want to change the text in. For this tutorial, we'll do Surfshine Harbor, because it's both uniquely labeled and easily accessible from the start of the game. Its text file is <tt>porttown_harbor.msbt</tt>. <b>Make sure to back up any files before you edit them!</b></li>
+                <li>Navigate to <code>\messages\US_English</code>. You'll edit a different file depending on which level and part of the game you want to change the text in. In this case, they're all named after the world-number level codes, which you can see in-game. For this tutorial, we'll do Surfshine Harbor, because it's both uniquely labeled and easily accessible from the start of the game. Its text file is <code>porttown_harbor.msbt</code>. <b>Make sure to back up any files before you edit them!</b></li>
                 <img src="./img/ss-english.png">
                 <li>You can change any text you want from here. Make sure the text is spaced and doesn't go outside of the text box; use the length of the original message as a guideline for how many characters long each line should be.</li>
                 <img src="./img/ss-kuriimu.png">
-                <li>You've changed your text, but where should it go now? It's time to create a mod directory. Go back to Citra's directory and create <tt>\load\mods\00040000000A5E00\</tt>. The code you use for the game here is the same one as the dumped RomFS. Then, create a <tt>\romfs</tt> folder. Inside there, <b>everything should match the original dump's structure</b>. Create another <tt>\messages\US_English</tt> folder and drop your edited text file in there. Again, make sure it exactly matches the name of the original file.</li>
+                <li>You've changed your text, but where should it go now? It's time to create a mod directory. Go back to Citra's menu and right-click <i>Sticker Star</i>, then click "Open Mods Data", which should take you to <code>%APPDATA%\Citra\load\mods\00040000000A5E00\</code>. The code used for the game here is the same one as the dumped RomFS. Then, create a <code>\romfs</code> folder. Inside there, <b>everything should match the original dump's structure</b>. Create another <code>\messages\US_English</code> folder and drop your edited text file in there. Again, make sure it exactly matches the name of the original file.</li>
                 <li>Play <i>Sticker Star</i> in Citra and get to the point where your text shows up. If it changed, congratulations! This guide worked!</li>
                 <div class="row">
                 <div class="column">
-                    <img src="./img/ss-surfshine1.png" width="300px">
+                    <img src="./img/ss-surfshine1.png" width="450px">
                     <figcaption>Original</figcaption>
                 </div>
                 <div class="column">
-                    <img src="./img/ss-surfshine2.png" width="300px">
+                    <img src="./img/ss-surfshine2.png" width="450px">
                     <figcaption>Modded</figcaption>
                 </div>
                 </div>
-                <li>A quick note on disabling mods. The easiest way to do this is to rename the <tt>romfs</tt> folder inside <tt>\load\mods</tt>. This way, the file structure doesn't match up anymore, so the modded files won't be loaded. To load a mod again, rename the <tt>romfs</tt> folder back.</li>
+                <li>A quick note on disabling mods. The easiest way to do this is to rename the <code>romfs</code> folder inside <code>\load\mods</code>. This way, the file structure doesn't match up anymore, so the modded files won't be loaded. To load a mod again, rename the <code>romfs</code> folder back.</li>
+            </ol>
+            <h2 id="tok"><i>The Origami King</i> Modding</h2>
+            <img src="./img/difficulty1-wordmark.png">
+            <h3>What You'll Need</h3>
+            <ul>
+                <li>A decrypted copy of the game.</li>
+                <li><a href="https://yuzu-emu.org/downloads/">Yuzu emulator</a>. I used Yuzu 622 for this mod, but more recent versions should work as well.</li>
+                <li><a href="https://github.com/IcySon55/Kuriimu/releases">Kuriimu</a>. This game uses MSBTs too.</li>
+            </ul>
+            <h3>The Guide</h3>
+            <p><i>The Origami King</i> is a Switch exclusive, so we'll be playing it on Yuzu.</p>
+            <ol>
+                <li>Get a fresh RomFS dump. Right click the game in Yuzu and click "Dump RomFS".</li>
+                <img src="./img/tok-romfs.png">
+                <li>Unlike with Citra, you'll be presented with another popup. This asks if you want a full RomFS dump, with game files, or just the directory structure. Choose "Full" and wait until the dump is complete.</li>
+                <img src="./img/tok-romfspopup.png">
+                <li>You can find your game file dump in <code>%APPDATA%\yuzu\dump\0100A3900C3E2000\romfs\</code>. It should look like this:</li>
+                <img src="./img/tok-rootfolders.png">
+                <li>Navigate to <code>\msg\US_English_Final</code> for the dialogue files. It should look like this:</li>
+                <img src="./img/tok-english.png">
+                <li>I've charted what each MSBT file is and what it contains <b><a href="./pm-reference.html#tok">here</a></b>. For now, let's start by editing Overlook Tower, an early-game area that doesn't have much text. Unlike in <i>Sticker Star</i> and <i>Color Splash</i>, the lines are not labeled with the character who speaks them. However, they're placed in roughly descending order that they appear in-game. Open up <code>W1C4.msbt</code> and make any edits you want. Make sure to back it up, first!</li>
+                <img src="./img/tok-kuriimu.png">
+                <li>As with <i>Sticker Star</i>, you need to place this in a mod directory. This is located in <code>%APPDATA%\yuzu\load\0100A3900C3E2000</code>; alternatively, you can right-click the game in Yuzu's menu and click "Open Mod Data Location". However, first, you'll need to give your mod a name. Create a folder named after the mod. You can have multiple mods at once.</li>
+                <img src="./img/tok-modfolders.png">
+                <li>After that, create a <code>\romfs</code> folder inside. Here, <b>everything should match the original dump's structure</b>. Create another <code>\msg\US_English_Final</code> and then put your edited MSBT file in there.</li>
+                <li>Next, load your mod. Right click the game in Yuzu and click "Properties". Under the "Add-Ons" tab, you'll see a list of mods, named after their folders. Make sure the one you want to use is checked. This means that, when the file is loaded in the original game, it will replace it with the one from your mod directory.</li>
+                <img src="./img/tok-modmenu.png">
+                <li>Play <i>The Origami King</i> in Yuzu and get to the point where your text shows up. If it changed, congratulations! This guide worked!</li>
+                <div class="row">
+                <div class="column">
+                    <img src="./img/tok-overlook1.png" width="450px">
+                    <figcaption>Original</figcaption>
+                </div>
+                <div class="column">
+                    <img src="./img/tok-overlook2.png" width="450px">
+                    <figcaption>Modded</figcaption>
+                </div>
+                </div>
+                <li>To disable mods, just uncheck them in the "Properties" menu. For more about Yuzu mod support, check out <a href="https://yuzu-emu.org/help/feature/game-modding/">the Yuzu website</a>.</li>
             </ol>
             </div>
         </div>
