@@ -66,6 +66,9 @@ body{
 .nav {
   float: right;
 }
+ul > li {
+  padding-top: 4px;
+}
 ol {
   margin: 0 0 1.5em;
   padding: 0;
