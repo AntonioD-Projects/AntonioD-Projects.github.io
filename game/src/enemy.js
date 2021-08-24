@@ -32,9 +32,3 @@ class Enemy {
         room.grid[this.enemyX][this.enemyY] = "enemy";
       }  
 }
-/*
-for (var i = 0; i < enemies.length; i++){
-  var enemy = enemies[i];
-  enemy.draw();
-}
-*/

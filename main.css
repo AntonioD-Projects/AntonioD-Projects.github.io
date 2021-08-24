@@ -11,6 +11,7 @@
 */
 
 body {
+  background: #2E3440 !important;
   font-family: -apple-system,".SFNSText-Regular","San Francisco","Roboto","Segoe UI","Helvetica Neue","Lucida Grande",sans-serif;
   color: #d2dcef;
   line-height: 1.2;
@@ -23,10 +24,6 @@ ol {
 }
 
 html {
- background: #2E3440 !important;
-}
-
-body{
  background: #2E3440 !important;
 }
 
@@ -151,8 +148,8 @@ audio {
 
 .spoiler:hover{
   color: white;
-  }
+}
 
 .spoiler2:hover { 
   background-color:white; 
-  }
+}

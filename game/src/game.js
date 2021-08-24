@@ -1,8 +1,7 @@
 /*TO DO:
 All major features have been added.
 Possible additions:
-*Add limits to how close an object can spawn to the player. I've already made it so they can't spawn on the same place,
-but having them not spawn directly next to each other would work too.
+*Add limits to how close an object can spawn to the player. I've already made it so they can't spawn on the same place, but having them not spawn directly next to each other would work too.
 *Add CSS to the HTML pages. It's not needed, but it would make the pages look better.
 *Color-code some of the text: red for enemies, green and blue for the health item and door.
 *CHECK: Do enemies move before or after the room is drawn? They should spawn in as it's drawn, but only move after the player first moves.
@@ -44,7 +43,6 @@ function draw() {
           text("D", xPos, yPos)
           break
       }
-      //rect(i*60, j*60, 60, 60);
     }
   }
   drawPlayerHealth();
@@ -53,7 +51,6 @@ function draw() {
 
 //Draw the health at the bottom of the screen
 function drawPlayerHealth() {
-  //textSize(32);
   var healthX = 0;
   var healthY = (room.roomHeight * 60) + 60;
   text("Your Health:", healthX, healthY)
@@ -63,7 +60,7 @@ function drawPlayerHealth() {
     text("H", healthX, healthY + 50)
     healthX = healthX + 40;
   }
-  if (playerHealth < 1) { //Place generateRoom in here and the room generates rapidly
+  if (playerHealth < 1) {
     gameRunning = false;
     drawGameOver();
   }
@@ -72,7 +69,6 @@ function drawPlayerHealth() {
 
 //Draw the score
 function drawScore() {
-  //textSize(32);
   var scoreX = 300;
   var scoreY = (room.roomHeight * 60) + 60;
   text("Your Score:", scoreX, scoreY)
@@ -82,7 +78,7 @@ function drawScore() {
 }
 
 //If the player runs out of health, draw this text
-function drawGameOver() { //Place generateRoom in here and the room generates rapidly
+function drawGameOver() {
   fill("red")
   text("You've run out of health!", 10, 200)
   text("Press a key to restart.", 10, 300)
@@ -130,7 +126,6 @@ room.grid[playerX][playerY] = "player";
 function keyPressed() {
   if (gameRunning == true) {
     room.grid[playerX][playerY] = "floor";
-    //moveSound.play();
     if (getGridPosition(keyCode) == "enemy") {
       playerHealth = playerHealth - 1;
     }
@@ -147,7 +142,6 @@ function keyPressed() {
       score = score + 1;
       doorSound.play();
       generateRoom();
-      //room.grid[playerX][playerY] = "player";
     }
     if ((keyCode === LEFT_ARROW) && (room.grid[playerX - 1][playerY] == "floor")) {
       playerX = playerX - 1;

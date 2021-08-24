@@ -32,11 +32,8 @@ class Room{
         }
         console.log(gridSquares);
         console.log(enemyAmount);
-        //this.enemies.push(new Enemy(0, 0))
         this.enemies = [];
-        //this.enemies = [new Enemy(3, 3), new Enemy(3, 2)];
         for (var i = 0; i < enemyAmount; i++){
-          //this.enemies[i].createEnemy(this);
           this.enemies.push(new Enemy());
           this.enemies[i].createEnemy(this);
         }
