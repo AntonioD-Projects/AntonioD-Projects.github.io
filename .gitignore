@@ -4,3 +4,9 @@ project/img/cs-islandinviolet3.png
 project/img/cs-islandinviolet2.png
 project/img/cs-holeinthesand2.png
 project/img/cs-fightpixelmix2.png
+.vscode/extensions.json
+.vscode/launch.json
+quizBACKUP/main.js
+quizBACKUP/questions.js
+quizBACKUP/quiz.css
+quizBACKUP/quiz.html

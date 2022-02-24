@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Antonio's Website</title>
+    <link rel="stylesheet" href="../main.css" type="text/css">
+    <link rel="stylesheet" href="quiz.css" type="text/css">
+</head>
+
+<body class="animated">
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Antonio's Website</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../project/smw.html">Super Mario World</a></li>
+                    <li><a href="../project/pm.html">Paper Mario</a></li>
+                    <li><a href="../project/archive.html">Archive</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="quiz-container">
+                <div class="title">Personality Quiz</div>
+                <div id="question" class="question"></div>
+                <label class="option">
+                    <input type="radio" name="option" value="1" />
+                    <span class="option1"></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" value="2" />
+                    <span class="option2"></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" value="3" />
+                    <span class="option3"></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" value="4" />
+                    <span class="option4"></span>
+                </label>
+                <!-- Buttons -->
+                <div class="controls">
+                    <button class="previous">Previous</button>
+                    <button class="next">Next</button>
+                </div>
+            </div>
+        
+            <div class="result">
+        
+            </div>
+        </div>
+        <p>Credit to <a href="https://github.com/edubz99/Simple-Personality-Quiz">Evans Dube</a> on GitHub for the base code. Original program released under the MIT License.</p>
+        <p>Modifications made:</p>
+        <ul>
+            <li>Added fourth option box</li>
+            <li>Removed unneeded CSS</li>
+            <li>Made it look more uniform with my site</li>
+            <li>Added code to add points to a certain character</li>
+            <li>Added multiple results</li>
+        </ul>
+    </div>
+    <script src="questions.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
