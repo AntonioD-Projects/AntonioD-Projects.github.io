@@ -27,20 +27,12 @@ const result = document.querySelector('.result');
 function generateQuestions (index) {
     //Select each question by passing it a particular index
     const question = questions[index];
-    const option1Total = questions[index].answer1Total;
-    const option2Total = questions[index].answer2Total;
-    const option3Total = questions[index].answer3Total;
-    const option4Total = questions[index].answer4Total;
     const option1Char = questions[index].answer1Char;
     const option2Char = questions[index].answer2Char;
     const option3Char = questions[index].answer3Char;
     const option4Char = questions[index].answer4Char;
     //Populate html elements 
     questionEl.innerHTML = `${index + 1}. ${question.question}`
-    option1.setAttribute('data-total', `${option1Total}`);
-    option2.setAttribute('data-total', `${option2Total}`);
-    option3.setAttribute('data-total', `${option3Total}`);
-    option4.setAttribute('data-total', `${option4Total}`);
     option1.setAttribute('data-char', `${option1Char}`);
     option2.setAttribute('data-char', `${option2Char}`);
     option3.setAttribute('data-char', `${option3Char}`);
@@ -60,11 +52,9 @@ function loadNextQuestion () {
         return;
     }
     //Get value of selected radio
-    const answerScore = Number(selectedOption.nextElementSibling.getAttribute('data-total'));
     const answerChar = String(selectedOption.nextElementSibling.getAttribute('data-char'));
 
     //Add the answer score to the score array
-    score.push(answerScore);
     char.push(answerChar);
 
     selectedAnswersData.push()
@@ -81,8 +71,6 @@ function loadNextQuestion () {
     if(answerChar == "courage"){
         courageScore++;
     }
-
-    totalScore = score.reduce((total, currentNum) => total + currentNum);
 
     //Finally we incement the current question number (to be used as the index for each array)
     currentQuestion++;
@@ -103,7 +91,7 @@ function loadNextQuestion () {
         container.style.display = 'none';
         if(cakeScore == highestScore){
             result.innerHTML =
-            `<h1 class="final-score">Your score: ${totalScore}</h1>
+            `<h1 class="final-score">Your score</h1>
             <div class="summary">
                <h1>Summary</h1>
                <p>CAKE BEST SCORE</p>
@@ -114,7 +102,7 @@ function loadNextQuestion () {
         }
         if(chessScore == highestScore){
             result.innerHTML =
-            `<h1 class="final-score">Your score: ${totalScore}</h1>
+            `<h1 class="final-score">Your score</h1>
             <div class="summary">
                <h1>Summary</h1>
                <p>CHESS BEST SCORE</p>
@@ -125,7 +113,7 @@ function loadNextQuestion () {
         }
         if(wimpScore == highestScore){
             result.innerHTML =
-            `<h1 class="final-score">Your score: ${totalScore}</h1>
+            `<h1 class="final-score">Your score</h1>
             <div class="summary">
                <h1>Summary</h1>
                <p>WIMP BEST SCORE</p>
@@ -136,7 +124,7 @@ function loadNextQuestion () {
         }
         if(courageScore == highestScore){
             result.innerHTML =
-            `<h1 class="final-score">Your score: ${totalScore}</h1>
+            `<h1 class="final-score">Your score</h1>
             <div class="summary">
                <h1>Summary</h1>
                <p>COURAGE HIGHEST SCORE</p>
