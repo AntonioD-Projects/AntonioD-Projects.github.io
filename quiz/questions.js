@@ -19,7 +19,7 @@ const questions = [
     "answer3": "If there's an accuser and a victim, that's enough proof.",
     "answer3Char": "hale",
     "answer4": "If you can't beat 'em, join 'em.",
-    "answer4Char": "abigail"
+    "answer4Char": "mary"
   },
   {
     "question": "What do you like to do for fun?",
@@ -87,24 +87,15 @@ const questions = [
     "answer4": "The law.",
     "answer4Char": "hale"
   },
+  {
+    "question": "Which of the following sayings means the most to you?",
+    "answer1": "\"Forgive and forget.\"",
+    "answer1Char": "elizabeth",
+    "answer2": "\"Justice delayed is justice denied.\".",
+    "answer2Char": "hale",
+    "answer3": "\"Money makes the world go round.\"",
+    "answer3Char": "parris",
+    "answer4": "\"Birds of a feather flock together.\"",
+    "answer4Char": "abigail"
+  }
 ]
-
-//LET'S GET TO QUESTIONS
-//Of the following, who holds the most power?
-//Yourself.    |Elizabeth
-//Your spouse. |Proctor
-//The church.  |Parris
-//The law.     |Hale
-
-//Which of the following sayings means the most to you?
-//"Forgive and forget." | Elizabeth
-//"Justice delayed is justice denied." | Hale
-//"Money makes the world go round." | Parris
-//"Birds of a feather flock together." | Abigail
-
-//You are about to approach your boss and ask for a raise. What is your reasoning?
-//It's in my contract. | Parris
-//
-
-//You find out that someone you love is sick. How do you react?
-//Are they faking?
