@@ -59,6 +59,7 @@ function loadNextQuestion () {
 
     selectedAnswersData.push()
 
+    //Increase score for a character depending on the answer
     if(answerChar == "elizabeth"){
         elizabethScore++;
     }
